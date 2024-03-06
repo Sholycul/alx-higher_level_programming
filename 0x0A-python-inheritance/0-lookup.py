@@ -1,8 +1,6 @@
-#!/usr/bin/python3
+#!usr/bin/python3
+"""A function file that defines available attributes and method"""
 
 def lookup(obj):
-    """Returns a list
-    of available attributes and methods of an object.
-    """
+    """Returns available attributes as a list"""
     return (dir(obj))
-
