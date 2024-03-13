@@ -1,2 +1,3 @@
--- Creates the db hbtn_0c_c in my MySqlServer.
-CREATE DATABASE IF NOT EXISTS `hbtn_0c_c`;
+-- create database; shouldn't fail if non-existent
+
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
