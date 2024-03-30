@@ -1,6 +1,14 @@
-#!usr/bin/python3
-"""A function file that defines available attributes and method"""
+#!/usr/bin/python3
+
+"""
+Lookup object Module.
+Creates a function with the prototype lookup(obj).
+"""
+
 
 def lookup(obj):
-    """Returns available attributes as a list"""
-    return (dir(obj))
+    """
+    Funcion that returns list of available attributes
+    and methods of an object.
+    """
+    return dir(obj)
