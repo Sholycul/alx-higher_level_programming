@@ -7,9 +7,9 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    # Check if` correct number of arguments is provided
+    # Check if correct number of arguments is provided
     if len(argv) != 5:
-        print("Usage: {} <username> <password> <database> <state>".format(argv[0]))
+        print(f"Usage: {argv[0]} <username> <password> <database> <state>")
         exit(1)
 
     # Establish a secure connection to the MySQL server
@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     # Execute the cursor to retrieve cities of the specified state sorted by id
     query = """
-            SELECT cities.id, cities.name
+            SELECT cities.name
             FROM cities
             JOIN states ON cities.state_id = states.id
             WHERE states.name = %s
@@ -38,10 +38,11 @@ if __name__ == "__main__":
     cities = cursor.fetchall()
 
     # Extract city names and join them with commas
-    city_names = ', '.join(str(city[1]) for city in cities)
+    city_names = ', '.join(str(city[0]) for city in cities)
 
     # Display the results
     print(city_names)
+
     # Close the cursor and database connection
     cursor.close()
     db.close()
