@@ -2,7 +2,8 @@
 
 """
 This script fetches all cities from the 'hbtn_0e_4_usa' database.
-It requires three parameters: MySQL username, MySQL password, and database name.
+It requires three parameters: MySQL username,
+MySQL password, and database name.
 The script utilizes the `MySQLdb` module for database interaction.
 Connection is made to a MySQL server running on `localhost` at port `3306`.
 Results are sorted in ascending order based on the `cities.id` column.
@@ -43,4 +44,3 @@ if __name__ == "__main__":
     # Closing the cursor and database connection
     cursor.close()
     db.close()
-
