@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 """
 Script to list all State objects from the database hbtn_0e_6_usa.
@@ -11,7 +11,7 @@ Arguments:
     password: MySQL password.
     database_name: Name of the MySQL database.
 
-This script connects to a MySQL server running on 
+This script connects to a MySQL server running on
 localhost at port 3306 and retrieves
 and displays all State objects from the specified database,
 sorted in ascending order by states.id.
