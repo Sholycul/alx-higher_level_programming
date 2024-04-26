@@ -9,6 +9,7 @@ and finally displays the body of the response.
 import requests
 import sys
 
+
 def fetch_commits(repo_name, owner_name):
     url = f"https://api.github.com/repos/{owner_name}/{repo_name}/commits"
     response = requests.get(url)
@@ -21,6 +22,7 @@ def fetch_commits(repo_name, owner_name):
     else:
         print("Failed to fetch commits")
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python script_name.py <repository_name> <owner_name>")
@@ -28,4 +30,3 @@ if __name__ == "__main__":
         repo_name = sys.argv[1]
         owner_name = sys.argv[2]
         fetch_commits(repo_name, owner_name)
-
