@@ -9,19 +9,23 @@ and finally displays the body of the response.
 import requests
 import sys
 
-if __name__ == "__main__":
-    repo_name = sys.argv[1]
-    owner_name = sys.argv[2]
-
+def fetch_commits(repo_name, owner_name):
     url = f"https://api.github.com/repos/{owner_name}/{repo_name}/commits"
-
     response = requests.get(url)
-
     if response.status_code == 200:
-        commits = response.json()[:10]  # Get the latest 10 commits
-        for commit in commits:
+        commits = response.json()
+        for commit in commits[:10]:
             sha = commit['sha']
             author_name = commit['commit']['author']['name']
             print(f"{sha}: {author_name}")
     else:
-        print("Error: Failed to retrieve commits from the repository.")
+        print("Failed to fetch commits")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python script_name.py <repository_name> <owner_name>")
+    else:
+        repo_name = sys.argv[1]
+        owner_name = sys.argv[2]
+        fetch_commits(repo_name, owner_name)
+
