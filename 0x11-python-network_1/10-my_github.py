@@ -12,5 +12,9 @@ if __name__ == "__main__":
     response = requests.get(url, headers=headers)
     profile = response.json()
 
-    idx = profile["id"]
-    print(idx)
+    try:
+        idx = profile["id"]
+    except KeyError:
+        idx = None
+    finally:
+        print(idx)
