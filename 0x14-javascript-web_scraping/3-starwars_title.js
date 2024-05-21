@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-//star wars movie data
+// star wars movie data
 
 const request = require('request');
 
