@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Read from file and orint content to the 
+// Read from file and orint content to the
 // standard output
 
 const filesys = require('fs');
